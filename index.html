@@ -31,21 +31,20 @@
                     })
                 })
               $(function () {
-            $("#datesubmit").click(function () {
-               var selecteddate = $("#datetimepicker4").data().date;
-                console.log(date)
-                    window.parent.postMessage(JSON.stringify({
-                        event_code: 'ym-client-event', data: JSON.stringify({
-                            event: {
-                                code: "Date",
-                                data: {
-                                    selectedDate: date
+                 $("#datesubmit").click(function () {
+                   var selecteddate = $("#datetimepicker4").data().date;
+                    console.log(date)
+                        window.parent.postMessage(JSON.stringify({
+                            event_code: 'ym-client-event', data: JSON.stringify({
+                                event: {
+                                    code: "Date",
+                                    data: {
+                                        selectedDate: date
+                                    }
                                 }
-                            }
-                        })
-                    }), '*');
-                           $('#datesubmit :input').attr('disabled', 'disabled');
-                         })
+                            })
+                        }), '*');
+                               $('#datesubmit :input').attr('disabled', 'disabled');
                       })
             </script>
         </div>
