@@ -32,7 +32,7 @@
             $(function () {
                 $("#datesubmit").on("click", function () {
                     var selecteddate = $("#datetimepicker4").data().date;
-                    console.log(date)
+                    console.log(selecteddate)
                         window.parent.postMessage(JSON.stringify({
                             event_code: 'ym-client-event', data: JSON.stringify({
                                 event: {
