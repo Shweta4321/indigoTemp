@@ -28,25 +28,29 @@
                         $('#datetimepicker4').datetimepicker({
                             inline: true
                         });
-                        $("#datesubmit").on("click", function () {
-                            var selecteddate = $("#datetimepicker4").data().date;
-                            console.log(selecteddate);
-                            window.parent.postMessage(JSON.stringify({
-                                event_code: 'ym-client-event', data: JSON.stringify({
-                                    event: {
-                                        code: "Date",
-                                        data: {
-                                            selectedDate: selecteddate
-                                        }
-                                    }
-                                })
-                            }), '*');
-                      $('#custom :input').attr('disabled', 'disabled');
+              $(function () {
+            $("#datesubmit").click(function () {
+               var selecteddate = $("#datetimepicker4").data().date;
+                console.log(date)
+                    window.parent.postMessage(JSON.stringify({
+                        event_code: 'ym-client-event', data: JSON.stringify({
+                            event: {
+                                code: "Date",
+                                data: {
+                                    selectedDate: date
+                                }
+                            }
+                        })
+                    }), '*');
+                    $('#custom :input').attr('disabled', 'disabled');
                     $('#custom').fadeTo("slow", 0.15, function () {
                         $(this).find(':input').attr('disabled', 'disabled');
                         $(this).find('label').css('cursor', 'default');
                         $('#add').append('Submitted');
                     });
+            
+            })
+        })
 
                         });
                     });
